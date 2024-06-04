@@ -5,6 +5,16 @@ window.addEventListener('load', () => {
   setTimeout(() => {
       loading.style.display = 'none';
   }, 1000);
+
+  // audio
+  let audio = document.querySelector('audio');
+  var currentTime = localStorage.getItem('currentTime');
+  if (currentTime) {
+    audio.currentTime = currentTime;
+  }
+  audio.addEventListener('timeupdate', function() {
+    localStorage.setItem('currentTime', audio.currentTime);
+  });
 });
 
 let img = document.getElementsByTagName('img');
@@ -12,13 +22,27 @@ Array.prototype.forEach.call(img, function(img) {
   img.setAttribute('draggable', 'false');
 });
 
+// Audio
+window.addEventListener('load', function() {
+
+});
+
+// window.addEventListener('load', function() {
+//   let audio = document.querySelector('audio');
+//   let context = new AudioContext();
+//   let source = context.createMediaElementSource(audio);
+//   source.connect(context.destination);
+//   audio.play();
+// });
+
+
 // Nav Mobile Animation
 const button = document.querySelectorAll('.nav-mobile a');
 
-for (var i = 0; i < button.length; i++) {
+for (let i = 0; i < button.length; i++) {
   button[i].addEventListener("click", function() {
     this.classList.add("nav-active");
-    for (var j = 0; j < button.length; j++) {
+    for (let j = 0; j < button.length; j++) {
       if (button[j] !== this) {
         button[j].classList.remove("nav-active");
       }
@@ -27,8 +51,8 @@ for (var i = 0; i < button.length; i++) {
 }
 
 // window.onscroll = function() {
-//     var element = document.getElementById("yourElementId");
-//     var position = element.getBoundingClientRect();
+//     let element = document.getElementById("yourElementId");
+//     let position = element.getBoundingClientRect();
   
 //     // cek jika elemen terlihat di viewport
 //     if (position.top >= 0 && position.bottom <= window.innerHeight) {
@@ -38,7 +62,6 @@ for (var i = 0; i < button.length; i++) {
   
 
   // Bg Image Switcher
-  const hero = document.querySelector('.hero');
   const images = {
     0: {
       image: "Jokowismangroveplanting1",
@@ -94,18 +117,19 @@ for (var i = 0; i < button.length; i++) {
   //   }
   };
   
+  const hero = document.querySelector('.hero');
+  const information = document.querySelector('.information p');
 
-  // hero.style.backgroundImage = `url(assets/${images[3]["image"]}.jpg)`
+// {let index = 0;
+// function changeBackgroundImage() {
+//   let gambarke = images[index]["image"]
+//   let gambar = `url(assets/${gambarke}.webp)`
+//   hero.style.backgroundImage = gambar;
+//   information.innerHTML = images[index]["information"];
+//   index = (index + 1);
+//   index == 5 ? index = 0 : '';
 
-  // Indeks untuk melacak gambar saat ini
-
-{let index = 0;
-function changeBackgroundImage() {
-  let gambarke = images[index]["image"]
-  let gambar = `url(assets/${gambarke}.jpg)`
-  hero.style.backgroundImage = gambar;
-  index = (index + 1);
-  index == 5 ? index = 0 : '';
-}
-setInterval(changeBackgroundImage, 7000);}
-    // hero.style.backgroundImage = 'url(assets/${images[2]["image"]}.jpg)'
+//   // Information
+// }
+// setInterval(changeBackgroundImage, 10000);}
+//     // hero.style.backgroundImage = 'url(assets/${images[2]["image"]}.jpg)'

@@ -1,10 +1,10 @@
 :root {
     --bg: rgba(255, 255, 255, 0.282);
     --primary: rgb(169, 189, 15);
-    --shd: rgba(245, 245, 245, 0.496);
+    --shd: rgba(234, 230, 217, 0.496);
     --accent: rgb(10, 134, 21);
-    --nav: rgba(234, 234, 234, 0.205);
-    --blur: 10px;
+    --nav: rgba(255, 255, 255, 0.077);
+    --blur: 4px;
 }
 * {
     /* font-family: "Lobster Two"; */
@@ -18,7 +18,8 @@
     text-decoration: none;
 }
 body{
-    height: 2000px;
+    overflow-x: hidden;
+    height: 5000px;
     /* transition: .5s; */
 }
 @font-face {
@@ -41,23 +42,15 @@ body{
     font-family: "aileronbold";
     src: url(assets/fonts/Aileron-Bold.woff);
 }
-@font-face {
-    font-family: "";
-    src: url(assets/fonts/);
-}
 /* Loading */
 #loading{
-    background-image: url(assets/IstiqomahMosque2.jpg);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
     background-blend-mode:  soft-light;
     opacity: .7;
     position: fixed;
     top: 0;
     left: 0;
     z-index: 1000;
-    /* background: #ffffff; */
+    background: #ffffffbc;
     transition: .5s;
     width: 100%;
     height: 100%;
@@ -76,6 +69,7 @@ nav{
     width: 100%;
 }
 .nav{
+    z-index: 9999999999999;
     width: 100%;
 }
 /* Nav Desktop */
@@ -92,7 +86,7 @@ nav{
     background-color: var(--nav);
     backdrop-filter: blur(var(--blur));
     box-shadow: 0 5px 12px  var(--nav);
-    z-index: 0;
+    z-index: 999;
 }
 .nav-desktop::after{
     content: "";
@@ -108,22 +102,62 @@ nav{
     z-index: 10;
 }
 .nav-desktop a{
-    width: 5rem;
-    font-size: 1.5rem;
+    width: 7rem;
+    text-align: center;
+    font-size: 1.7rem;
     margin: 0 5rem;
     color: rgb(14, 14, 14);
     font-family: "breakwater";
     font-style: normal;
     font-weight: 800;
+    transition: 1s;
+    z-index: 999;
 }
+.nav-desktop a::before,
+.nav-desktop a::after {
+    transition: 5s;
+}
+.nav-desktop a:hover::before{
+    content: "<";
+    position: absolute;
+    font-family: rascon;
+    font-size: 1.5rem;
+    margin-left : -1rem;
+    color: white;
+    text-shadow: 0 0 5px rgb(246, 160, 0);
+    transition: .5s;
+}
+.nav-desktop a:hover::after{
+    content: ">";
+    position: absolute;
+    font-family: rascon;
+    font-size: 1.5rem;
+    margin-left: .4rem;
+    color: white;
+    text-shadow: 0 0 5px rgb(246, 160, 0);
+    transition: .5s;
+}
+
+.nav-desktop a:hover{
+    text-shadow: 0 0 5px black;
+    color: #EEC900;
+    transition: .5s;
+    position: relative;
+}
+
 .logo{
     margin-top: 1rem;
-    z-index: 10;
+    z-index: 100;
+}
+.logo img:hover{
+    transform: scale(1.1);
+    transition: .3s;
 }
 .logo img{
+    transition: .7s;
     width: 7rem;
     z-index: 20;
-    filter: saturate(.3);
+    filter: drop-shadow(0 2px  5px rgb(0, 93, 6));
 }
 /* Nav Mobile */
 .nav-mobile{
@@ -137,7 +171,7 @@ nav{
     border-radius: 50px;
     display: none;
     margin: 5px auto;
-    z-index: 10;
+    z-index: 1000;
 }
 .nav-mobile a{
     margin: 24px;
@@ -195,7 +229,7 @@ nav{
     background-color: var(--accent);
     border-top-right-radius: 50px;
     box-shadow: 0px -7px 0 0px var(--bg);
-    z-index: -9999;
+    z-index: -10;
     background: transparent;
 }
 .nav-active::after{
@@ -208,49 +242,44 @@ nav{
     background-color: var(--accent);
     border-top-left-radius: 50px;
     box-shadow: 0px -7px 0px 0 var(--bg);
-    z-index: -9999;
+    z-index: -10;
     background: transparent;
 }
 /* Hero Section */
 .hero{
-    min-height: 110vh;
+    min-height: 100vh;
     display: flex;
     top: 0;
-    background-image: url(assets/IstiqomahMosque2.jpg);
+    background-image: url(assets/sunsetbg.jpg);
     background-repeat: no-repeat;
     background-position: center;
     background-position-x: center;
     background-size:cover ;
     background-attachment: fixed;
-    /* background-image: linear-gradient(rgba(255, 0, 0, 0) 80%, rgb(255, 255, 255) ); */
-    animation: bgAnim 10s ;
+    z-index: -999;
+
 }
-/* @keyframes bgAnim {
-    from{
-        background-position-x: 0;
-    }
-    to{
-        background-position-x: 10%;
-    }
-    
-} */
+
 .hero .content{
     text-align: center;
     margin: auto;
-    margin: calc(5rem + 3vw) auto 0;
+    margin: calc(7rem + 5vw) auto 0;
 }
 .hero .content h1,h2{
+    z-index: -10;
     font-family: "breakwater";
     font-weight: 900;
 }
 .hero h1{
-    margin: 0 1rem;
+    margin: 0 calc(1rem + 1vw);
     color: rgba(0, 0, 0, 0.873);
     font-style: italic;
     font-size:calc(3.5rem + 2vw);
     font-weight: bolder;
+    transition: .3s;
 }
 .hero h2{
+    transition: .7s;
     font-size: calc(2rem + 2vw);
 }
 .hero p{
@@ -260,32 +289,39 @@ nav{
     max-width: 50rem;
     width: 60%;
     font-size: calc(1.3rem + .5vw);  
+    transition: .3s;
 }
 .hero .content a{  
     font-family: rascon;
-    margin-top: 6rem;
+    margin-top: calc(6rem + 3vw);
     padding: 1rem 2rem;
     background-color: var(--primary);
     color: black;
     font-size: 1.5rem;
     border-radius: 50px;
     font-weight: bold;
-    transform: scale(0);
+    transition: .2s;
+    /* margin-top: 5rem; */
+}
+.hero .content .btn{
+    transition: .1s;
 }
 .hero .content a:hover{
-    transform: scale(5);
-    transition: 1s;
+    transition: .4s;
     box-shadow: 0 10px 10px var(--shd);
-    background-color:rgb(32, 59, 0);
+    background-color:rgb(56, 99, 3);
     color: rgba(255, 255, 255, 0.534);
 }
 .information p{
+    display: none;
     margin: 2rem auto;
     max-width: 50rem;
     width: 60%;
     font-size: calc(1.3rem + .5vw);  
 }
-
+/* About */
+/* .about{
+} */
 
 /* Media Queries */
 
@@ -305,7 +341,6 @@ nav{
         font-size: 1.2rem;
         margin: 0 calc(1.5rem + 1vw);
     }
-    
 }
 
 /* Mobile */
@@ -319,10 +354,16 @@ nav{
     .nav-mobile{
         display: flex;
     }
+    .hero{
+        background-image: url(assets/IstiqomahMosque2.jpg);
+    }
     .hero .content{
         margin: 30% auto 0;
     }
     .hero h1{
         font-size: 4rem;
+    }
+    .information p{
+        display: block;
     }
 }

@@ -27,15 +27,6 @@ window.addEventListener('load', function() {
 
 });
 
-// window.addEventListener('load', function() {
-//   let audio = document.querySelector('audio');
-//   let context = new AudioContext();
-//   let source = context.createMediaElementSource(audio);
-//   source.connect(context.destination);
-//   audio.play();
-// });
-
-
 // Nav Mobile Animation
 const button = document.querySelectorAll('.nav-mobile a');
 
@@ -133,3 +124,36 @@ for (let i = 0; i < button.length; i++) {
 // }
 // setInterval(changeBackgroundImage, 10000);}
 //     // hero.style.backgroundImage = 'url(assets/${images[2]["image"]}.jpg)'
+
+
+// Parallax
+$(window).scroll(function(){
+  var scroll = $(this).scrollTop();
+  console.log(scroll)
+  // $('.content').css({
+  //   'transform' : 'translate('+scroll*2+'px, '+scroll+'px)'
+  // });  
+  $('.content h1').css({
+    'transform' : 'translate('+scroll/.3+'px, '+scroll+'px)'
+  });  
+  $('.content h2').css({
+    'transform' : 'translate(-'+scroll/.3+'px, '+scroll+'px)'
+  });  
+  $('.content p').css({
+    'transform' : 'translate(0px, '+scroll/2+'px)'
+  });  
+  $('.content .btn').css({
+    'transform' : 'translate(0px, '+scroll/1.8+'px)'
+  });  
+ 
+  if(scroll >= 700 ){
+    $('.content p, .btn').css({
+      'opacity' : 0
+    })
+  } else{
+    $('.content p, .btn').css({
+      'opacity' : 1
+    })
+  }
+
+});

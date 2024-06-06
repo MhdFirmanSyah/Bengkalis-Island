@@ -102,9 +102,9 @@ nav{
     z-index: 10;
 }
 .nav-desktop a{
-    width: 7rem;
+    width: 3rem;
     text-align: center;
-    font-size: 1.7rem;
+    font-size: 1.5rem;
     margin: 0 5rem;
     color: rgb(14, 14, 14);
     font-family: "breakwater";
@@ -320,8 +320,49 @@ nav{
     font-size: calc(1.3rem + .5vw);  
 }
 /* About */
-/* .about{
+.about{
+    box-shadow: 0 0 5px black;
+    margin: 4rem auto;
+    max-width: 90%;
+    padding: .5rem;
+}
+.about-content{
+    flex-direction: row;
+    display: flex;
+}
+#content{
+    /* width: 68%; */   
+    margin: 1rem;
+}
+#content article{
+    margin: 1rem auto;
+}
+#content article h2{ 
+    font-size: 2rem;
+    text-align: center;
+    font-weight: bold;
+    margin: 1rem;
+}
+#content article p{
+    font-size: 1.4rem;
+    margin: .4rem;
+}
+.aside-content{
+    /* min-width: 30%; */
+    max-width: 30%;
+    /* margin: 1rem; */
+}
+.aside-content .map{
+    width: cover;
+    height: 10rem;
+}
+/* .aside-content h2{
+    font-size: 2rem;
+    text-align: center;
+    font-weight: bold;
+    margin: 1rem;
 } */
+
 
 /* Media Queries */
 

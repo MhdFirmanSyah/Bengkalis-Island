@@ -24,7 +24,7 @@
   <header>
     <nav class="navbar">
       <div class="nav-desktop">
-        <a href="#home">Home</a>
+        <a href="#">Home</a>
         <a href="#about">About</a>
           <div class="logo">
             <a href="#">
@@ -35,9 +35,9 @@
         <a href="#culture">Culture</a>
       </div>
       
-      <div class="nav-mobile">
+      <div class="nav-mobile">  
         <a  href="#about"><img src="assets/logo/about.svg" alt="About Bengkalis" title="About Bengkalis"></a>
-        <a class="" href="#home" ><img src="assets/logo/home.svg" alt="Home" title="Home"></a>
+        <a class="" href="#" ><img src="assets/logo/home.svg" alt="Home" title="Home"></a>
         <a  href="#destination"><img src="assets/logo/destination.svg" alt="Destination" title="Destination"></a>
       </div>
     </nav>
@@ -50,19 +50,23 @@
         <h1>Welcome to Bengkalis</h1>
         <h2>Negeri Junjugan</h2>
         <p>Discover the natural beauty, cultural richness, and friendliness of the people of Bengkalis</p>
-        <span class="btn"><a href="">Explore Bengkalis</a></span>  
-        <div class="information">
-          <p></p>
-        </div>
+        <span class="btn"><a href="#about">Explore Bengkalis</a></span>  
     </div>
    </section>
     <!-- Hero End -->
 
     <!-- About Start -->
+    <br id="about">
   <main class="about">
     <section class="about-content">
       <div id="content">
         <article>
+          <div>
+            <span class="previous" href=""><<</span>
+            <img id="information" src="assets/IstiqomahMosque2.jpg" alt="">
+            <span class="next" href="">>></span>
+          </div>
+          <label class="information" for="information">Masjid Istiqomah Bengkalis merupakan salah satu masjid terbesar dan tertua di Bengkalis dan menjadi salah satu ikon Kota Bengkalis.</label>
           <h2>Sejarah Bengkalis</h2>
           <p>Bengkalis memiliki sejarah panjang dan kaya. Pulau ini pertama kali dihuni oleh suku Melayu pada abad ke-13. Pada abad ke-16, Bengkalis menjadi bagian dari Kesultanan Malaka. Setelah jatuhnya Malaka ke tangan Portugis pada tahun 1511, Bengkalis menjadi pusat perdagangan penting di Selat Malaka.</p>
         </article>
@@ -72,12 +76,24 @@
           <p>Makanan khas Bengkalis juga terkenal lezat, seperti gulai ikan patin, asam pedas, dan nasi lemak.</p>
         </article>
       </div>
-        <aside class="aside-content">
-          <h3>Geologi</h3>
-          <iframe class="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d555075.0474171361!2d101.94696396053337!3d1.4371845822010276!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31d15cca9f748f39%3A0xa10c7fd8748adc01!2sPulau%20Bengkalis!5e1!3m2!1sid!2sid!4v1717600763400!5m2!1sid!2sid" style="border:2;" allowfullscreen="true" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-          <p>Bengkalis adalah sebuah kabupaten di provinsi Riau, Indonesia. Ibu kota kabupaten ini terletak di Kota Bengkalis. Kabupaten Bengkalis memiliki luas wilayah 7.104,00 km² dan jumlah penduduk sekitar 500.000 jiwa.</p>
-          <p>Bengkalis merupakan salah satu daerah penghasil minyak bumi terbesar di Indonesia. Selain itu, Bengkalis juga memiliki potensi wisata yang cukup besar, seperti Pantai Rupat, Pantai Selatbaru, dan Pulau Beting Aceh.</p>
-        </aside>
+
+      <aside class="aside-content">
+        <h3>Geologi</h3>
+        <a href="#m1" style="position: relative;">
+          <img class="enter" src="assets/logo/zoom.svg" alt="">
+          <iframe class="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d555075.0474171361!2d101.94696396053337!3d1.4371845822010276!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31d15cca9f748f39%3A0xa10c7fd8748adc01!2sPulau%20Bengkalis!5e1!3m2!1sid!2sid!4v1717600763400!5m2!1sid!2sid" style="border:2;" allowfullscreen="true" loading="eager"></iframe>
+        </a>
+        
+        <div id="m1" class="overlay">
+          <a href="#about" class="close">close</a>
+          <iframe class="map" scrolling="yes" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d555075.0474171361!2d101.94696396053337!3d1.4371845822010276!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31d15cca9f748f39%3A0xa10c7fd8748adc01!2sPulau%20Bengkalis!5e1!3m2!1sid!2sid!4v1717600763400!5m2!1sid!2sid" allowfullscreen="true" loading="eager" referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
+
+        <p>Bengkalis adalah sebuah kabupaten di provinsi Riau, Indonesia. Ibu kota kabupaten ini terletak di Kota Bengkalis. Kabupaten Bengkalis memiliki luas wilayah 7.104,00 km² dan jumlah penduduk sekitar 500.000 jiwa.</p>
+        <p>Bengkalis merupakan salah satu daerah penghasil minyak bumi terbesar di Indonesia. Selain itu, Bengkalis juga memiliki potensi wisata yang cukup besar, seperti Pantai Rupat, Pantai Selatbaru, dan Pulau Beting Aceh.</p>
+      </aside>
+
     </section>
 <!-- Wisata Start -->
     <section class="wisata">
@@ -131,7 +147,6 @@
   <!-- Footer Start -->
   <!-- Footer End -->
   <audio autoplay="true" preload="auto" loop src="assets/music/Ladyfingers.m4a"></audio>
-  <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
   <script src="main.js"></script>
 </body>
 </html>

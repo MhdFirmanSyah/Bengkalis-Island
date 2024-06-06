@@ -41,38 +41,31 @@ for (let i = 0; i < button.length; i++) {
   });
 }
 
-// window.onscroll = function() {
-//     let element = document.getElementById("yourElementId");
-//     let position = element.getBoundingClientRect();
-  
-//     // cek jika elemen terlihat di viewport
-//     if (position.top >= 0 && position.bottom <= window.innerHeight) {
-//       console.log("Elemen telah terlihat di viewport");
-//     }
-//   }
-  
-
   // Bg Image Switcher
   const images = {
     0: {
-      image: "Jokowismangroveplanting1",
-      information: "Foto Jokowi menanam mangrove"
+      image: "lapangantugu",
+      information: "Lapangan Tugu merupakan salah satu ruang publik yang paling populer di Bengkalis dan sering digunakan untuk berbagai kegiatan, seperti upacara bendera, konser musik, dan pameran"
     },
     1: {
-      image: "lapangantugu",
-      information: "Foto Lapangan Tugu"
+      image: "Jokowismangroveplanting1",
+      information: " Kegiatan penanaman pohon mangrove yang dilakukan oleh Presiden Joko Widodo di Kabupaten Bengkalis, Kegiatan ini bertujuan untuk menghijaukan kawasan pesisir dan melindungi ekosistem mangrove di Bengkalis."
     },
     2: {
       image: "MangroveatBukitbatu",
-      information: "Foto Hutan Mangrove di Bukitbatu"
+      information: "Hutan mangrove yang terletak di Desa Bukitbatu, Kecamatan Bengkalis. Hutan mangrove ini memiliki luas sekitar 500 hektare dan merupakan salah satu hutan mangrove terbesar di Bengkalis."
     },
     3: {
       image: "Nelayan",
-      information: "Foto Nelayan"
+      information: "Aktivitas penangkapan ikan dan hasil laut lainnya yang dilakukan oleh nelayan setempat. Bengkalis merupakan salah satu daerah penghasil ikan terbesar di Indonesia."
     },
     4: {
       image: "Perahujongselatbaru",
-      information: "Foto Perahu Jong di Selat Baru"
+      information: "Perahu jong adalah sejenis perahu tradisional yang berasal dari daerah Selat Baru. Perahu ini dikenal dengan bentuknya yang unik dan ukurannya yang besar."
+    },
+    5: {
+      image: "IstiqomahMosque2",
+      information: "Masjid Istiqomah Bengkalis merupakan salah satu masjid terbesar dan tertua di Bengkalis dan menjadi salah satu ikon Kota Bengkalis."
     },
     // 0: {
     //   image: "ILoveBengkalis",
@@ -80,10 +73,6 @@ for (let i = 0; i < button.length; i++) {
     // },
     // 1: {
     //   image: "IstiqomahMosque",
-    //   information: "Foto Masjid Istiqomah"
-    // },
-    // 2: {
-    //   image: "IstiqomahMosque2",
     //   information: "Foto Masjid Istiqomah"
     // },
     // 6: {
@@ -108,52 +97,32 @@ for (let i = 0; i < button.length; i++) {
   //   }
   };
   
-  const hero = document.querySelector('.hero');
-  const information = document.querySelector('.information p');
+  const hero = document.querySelector('#content article img');
+  const information = document.querySelector('.information');
+  const previeous = document.querySelector('#previous');
+  const next = document.querySelector('#next');
 
-// {let index = 0;
-// function changeBackgroundImage() {
-//   let gambarke = images[index]["image"]
-//   let gambar = `url(assets/${gambarke}.webp)`
-//   hero.style.backgroundImage = gambar;
-//   information.innerHTML = images[index]["information"];
-//   index = (index + 1);
-//   index == 5 ? index = 0 : '';
+{let index = 0;
+function changeBackgroundImage() {
+  let gambarke = images[index]["image"]
+  // let gambar = `url(assets/${gambarke}.webp)`
+  let gambar = `assets/${gambarke}.webp`
+  // hero.style.backgroundImage = gambar;
+  hero.src = gambar;
+  information.innerHTML = images[index]["information"];
+  // previeous.onclick = index -= 1;
+  next == onclick ? ++index : "";
+  console.log(index);
+  index = (index + 1);
+  index == 6 ? index = 0 : '';}
+setInterval(changeBackgroundImage, 10000);}
+    // hero.style.backgroundImage = 'url(assets/${images[2]["image"]}.jpg)'
 
-//   // Information
-// }
-// setInterval(changeBackgroundImage, 10000);}
-//     // hero.style.backgroundImage = 'url(assets/${images[2]["image"]}.jpg)'
-
-
-// Parallax
-$(window).scroll(function(){
-  var scroll = $(this).scrollTop();
-  console.log(scroll)
-  // $('.content').css({
-  //   'transform' : 'translate('+scroll*2+'px, '+scroll+'px)'
-  // });  
-  $('.content h1').css({
-
-    'right' : scroll/1.5+'px',
-  });  
-  $('.content h2').css({
-    'left' : scroll/1.5+'px',
-  });  
-  $('.content p').css({
-    'top' : scroll/1.5+'px',
-  });  
-  $('.content .btn').css({
-    'top' : scroll/1.5+'px',
-  });  
- 
-  if(scroll >= 700 ){
-    $('.content p, .btn').css({
-      'opacity' : 0
-    })
-  } else{
-    $('.content p, .btn').css({
-      'opacity' : 1
-    })
-  }
+// Mapp
+document.querySelector('#m1').addEventListener('click', () => {
+  window.location.hash = "/";
+  document.documentElement.style.overflow = 'auto';
 });
+document.querySelector('.enter').addEventListener('click', () =>{
+    document.documentElement.style.overflow = 'hidden';
+})

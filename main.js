@@ -85,9 +85,6 @@ for (let i = 0; i < button.length; i++) {
   const information = document.querySelector('.information');
 
 {let index = 0;
-  if (localStorage.getItem('nilai')) {
-    index = localStorage.getItem('nilai');
-  }
   function changeBackgroundImage() {
       let gambarke = images[index]["image"]
       let gambar = `assets/${gambarke}.webp`
@@ -95,15 +92,10 @@ for (let i = 0; i < button.length; i++) {
       information.innerHTML = images[index]["information"];
       console.log(index)
       index = (index + 1);
-      if(index <= 9){
-        localStorage.setItem('nilai', index);
-      } else{}
       index == 9 ? index = 0 : '';
     };
   setInterval(changeBackgroundImage, 1000);
   };
-    // hero.style.backgroundImage = 'url(assets/${images[2]["image"]}.jpg)'
-
 
 // Mapp
 document.querySelector('#m1').addEventListener('click', () => {

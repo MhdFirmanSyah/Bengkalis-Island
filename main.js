@@ -90,11 +90,10 @@ for (let i = 0; i < button.length; i++) {
       let gambar = `assets/${gambarke}.webp`
       hero.src = gambar;
       information.innerHTML = images[index]["information"];
-      console.log(index)
       index = (index + 1);
       index == 9 ? index = 0 : '';
     };
-  setInterval(changeBackgroundImage, 1000);
+  setInterval(changeBackgroundImage, 7000);
   };
 
 // Mapp
